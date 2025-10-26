@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Object Example</title>
+</head>
+<body>
+    <h1 id="heading">Hello World!</h1>
+    <p>This paragraph will change using document object.</p>
+
+    <script>
+        // Access and modify document properties
+        console.log("Document Title: " + document.title);
+        document.title = "New Document Title";
+
+        // Modify element using document method
+        document.getElementById("heading").innerHTML = "Updated Heading using document.getElementById";
+    </script>
+</body>
+</html>

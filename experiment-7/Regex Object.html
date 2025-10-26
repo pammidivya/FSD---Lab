@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regex Object Example</title>
+</head>
+<body>
+    <h1>Regex Object Example</h1>
+    <script>
+        let text = "The rain in SPAIN stays mainly in the plain.";
+        let pattern = /ain/gi;
+
+        console.log("Test match: " + pattern.test(text));
+        console.log("Match result: " + text.match(pattern));
+        console.log("Replace 'ain' with '***': " + text.replace(pattern, "***"));
+    </script>
+</body>
+</html>

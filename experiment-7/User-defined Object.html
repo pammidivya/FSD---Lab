@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User-defined Object Example</title>
+</head>
+<body>
+    <h1>User-defined Object Example</h1>
+    <script>
+        // Constructor function
+        function Person(name, age) {
+            this.name = name;       // property
+            this.age = age;         // property
+
+            // Method
+            this.greet = function() {
+                return "Hello, my name is " + this.name + " and I am " + this.age + " years old.";
+            }
+
+            // Accessor property (getter)
+            Object.defineProperty(this, "info", {
+                get: function() {
+                    return this.name + " (" + this.age + ")";
+                }
+            });
+        }
+
+        // Create object
+        let person1 = new Person("John", 25);
+        let person2 = new Person("Alice", 30);
+
+        console.log(person1.greet());
+        console.log(person2.greet());
+        console.log("Accessor property: " + person1.info);
+    </script>
+</body>
+</html>
