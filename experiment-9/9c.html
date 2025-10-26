@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f7fa; text-align: center; margin: 20px; }
+    form { display: inline-block; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { padding: 8px; margin: 10px; border-radius: 5px; border: 1px solid #aaa; width: 250px; }
+    button { padding: 10px 15px; margin-top: 10px; border: none; border-radius: 6px; cursor: pointer; background: #0077cc; color: white; font-weight: bold; }
+    button:hover { background: #005fa3; transition: 0.3s; }
+    .error { color: red; margin-top: 10px; }
+    .success { color: green; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Registration Form</h1>
+
+  <form id="registrationForm">
+    <input type="text" id="name" placeholder="Enter Name"><br>
+    <input type="text" id="mobile" placeholder="Enter Mobile Number"><br>
+    <input type="email" id="email" placeholder="Enter Email"><br>
+    <button type="submit">Register</button>
+    <div id="message"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById("registrationForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page reload
+      validateForm();
+    });
+
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const messageDiv = document.getElementById("message");
+
+      // Name validation: starts with letter, followed by alphanumeric, min length 6
+      const nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+      if(!nameRegex.test(name)) {
+        messageDiv.innerHTML = "<span class='error'>Invalid Name! Must start with a letter, at least 6 characters, alphanumeric only.</span>";
+        return false;
+      }
+
+      // Mobile validation: exactly 10 digits
+      const mobileRegex = /^[0-9]{10}$/;
+      if(!mobileRegex.test(mobile)) {
+        messageDiv.innerHTML = "<span class='error'>Invalid Mobile! Must be exactly 10 digits.</span>";
+        return false;
+      }
+
+      // Email validation: basic format xxxxx@xxxx.xxx
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if(!emailRegex.test(email)) {
+        messageDiv.innerHTML = "<span class='error'>Invalid Email! Must be in format xxxxx@xxxx.xxx</span>";
+        return false;
+      }
+
+      // If all validations pass
+      messageDiv.innerHTML = "<span class='success'>Registration Successful </span>";
+      return true;
+    }
+  </script>
+</body>
+</html>

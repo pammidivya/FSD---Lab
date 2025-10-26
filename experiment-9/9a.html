@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Operations - Functions Only</title>
+</head>
+<body>
+  <script>
+    // Factorial
+    function factorial(n) {
+      let fact = 1;
+      for(let i=1; i<=n; i++) fact *= i;
+      return fact;
+    }
+
+    // Fibonacci Series
+    function fibonacci(n) {
+      let series = [];
+      let a = 0, b = 1;
+      for(let i=0; i<n; i++){
+        series.push(a);
+        let next = a+b;
+        a=b;
+        b=next;
+      }
+      return series;
+    }
+
+    // Prime Numbers
+    function isPrime(num) {
+      if(num < 2) return false;
+      for(let i=2; i<=Math.sqrt(num); i++){
+        if(num % i === 0) return false;
+      }
+      return true;
+    }
+
+    function primesUpTo(n){
+      let primes = [];
+      for(let i=2; i<=n; i++){
+        if(isPrime(i)) primes.push(i);
+      }
+      return primes;
+    }
+
+    // Palindrome Check
+    function isPalindrome(num){
+      let str = num.toString();
+      let reversed = str.split('').reverse().join('');
+      return str === reversed;
+    }
+
+    // Example calls
+    let number = 18;
+    console.log("Number:", number);
+    console.log("Factorial:", factorial(number));
+    console.log("Fibonacci series:", fibonacci(number));
+    console.log("Prime numbers up to number:", primesUpTo(number));
+    console.log("Is Palindrome?", isPalindrome(number));
+  </script>
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <h1>Output Showing in Console Panel</h1>
+</div>
+
+</body>
+</html>
