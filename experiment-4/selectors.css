@@ -1,0 +1,31 @@
+/* ---------- 1. Simple selectors ---------- */
+p { color: darkslategray; }                      /* element selector */
+#special { color: red; font-weight: bold; }      /* id selector */
+.note { background-color: #f0f0f0; }             /* class selector */
+div.group1, span.group1 { color: purple; }       /* group selector */
+* { font-family: Arial, sans-serif; }            /* universal selector */
+
+/* ---------- 2. Combinator selectors ---------- */
+.parent p { color: green; }                      /* descendant selector */
+.child-example > p { color: blue; }              /* child selector */
+h3 + p { background-color: yellow; }             /* adjacent sibling selector */
+h3 ~ p { border: 1px solid orange; }             /* general sibling selector */
+
+/* ---------- 3. Pseudo-class selectors ---------- */
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: red; }
+a:active { color: green; }
+
+ul li:first-child { font-weight: bold; }
+ul li:last-child { color: brown; }
+ul li:nth-child(2) { color: orange; }
+
+/* ---------- 4. Pseudo-element selectors ---------- */
+.pseudo-text::first-letter { font-size: 24px; color: crimson; }
+.pseudo-text::after { content: " ← This was added with ::after"; color: gray; }
+
+/* ---------- 5. Attribute selectors ---------- */
+input[type="text"] { border: 2px solid blue; }
+input[type="email"] { border: 2px dashed green; }
+input[type="password"] { border: 2px dotted red; }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selector Forms</title>
+    <link rel="stylesheet" href="selectors.css">
+</head>
+<body>
+    <h1 id="main-heading">CSS Selector Forms Example</h1>
+
+    <section>
+        <h2 class="highlight">1. Simple Selectors</h2>
+        <p>This is a paragraph styled by <b>element selector</b>.</p>
+        <p id="special">This paragraph is styled using <b>ID selector</b>.</p>
+        <p class="note">This paragraph uses <b>class selector</b>.</p>
+        <div class="group1">Grouped selector applies here</div>
+        <span class="group1">Grouped selector also applies here</span>
+    </section>
+
+    <section>
+        <h2 class="highlight">2. Combinator Selectors</h2>
+        <div class="parent">
+            <p>This is a descendant of div (descendant selector).</p>
+            <div>
+                <p>This is a nested descendant paragraph.</p>
+            </div>
+        </div>
+        <div class="child-example">
+            <p>This is a direct child (child selector).</p>
+            <span>Sibling 1</span>
+            <span>Sibling 2</span>
+        </div>
+        <h3>Heading</h3>
+        <p>Paragraph immediately after h3 (adjacent sibling selector).</p>
+        <p>Another paragraph after h3 (general sibling selector).</p>
+    </section>
+
+    <section>
+        <h2 class="highlight">3. Pseudo-class Selectors</h2>
+        <a href="https://example.com" target="_blank">Example Link</a>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="highlight">4. Pseudo-element Selectors</h2>
+        <p class="pseudo-text">This text will show ::first-letter and ::after effects.</p>
+    </section>
+
+    <section>
+        <h2 class="highlight">5. Attribute Selectors</h2>
+        <input type="text" placeholder="Type here...">
+        <input type="email" placeholder="Enter email">
+        <input type="password" placeholder="Enter password">
+    </section>
+</body>
+</html>
