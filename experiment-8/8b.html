@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week Days using Switch Case</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 20px; background: #f4f4f4; }
+    input { padding: 5px; margin: 5px; border-radius: 5px; border: 1px solid #aaa; width: 150px; }
+    button { padding: 8px 15px; margin: 10px; border: none; border-radius: 6px; cursor: pointer; background: #ff7f50; color: white; }
+    button:hover { background: #e0663d; transition: 0.3s; }
+    #output { margin-top: 20px; padding: 15px; background: #fff; border-radius: 8px; display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>Display Week Day</h1>
+
+  <input type="number" id="dayNum" placeholder="Enter day number (1-7)">
+  <br>
+  <button onclick="showWeekDay()">Show Day</button>
+
+  <div id="output"></div>
+
+  <script>
+    function showWeekDay() {
+      let day = parseInt(document.getElementById("dayNum").value);
+      let dayName = "";
+
+      switch(day) {
+        case 1:
+          dayName = "Sunday";
+          break;
+        case 2:
+          dayName = "Monday";
+          break;
+        case 3:
+          dayName = "Tuesday";
+          break;
+        case 4:
+          dayName = "Wednesday";
+          break;
+        case 5:
+          dayName = "Thursday";
+          break;
+        case 6:
+          dayName = "Friday";
+          break;
+        case 7:
+          dayName = "Saturday";
+          break;
+        default:
+          dayName = "Invalid day number! Please enter 1-7.";
+      }
+
+      document.getElementById("output").innerHTML = <b>${dayName}</b>;
+    }
+  </script>
+</body>
+</html>

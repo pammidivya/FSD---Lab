@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Denomination Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f4f7fa; margin: 20px; }
+    input { padding: 8px; margin: 10px; border-radius: 5px; border: 1px solid #aaa; width: 200px; }
+    button { padding: 8px 15px; margin: 10px; border: none; border-radius: 6px; cursor: pointer; background: #0077cc; color: white; }
+    button:hover { background: #005fa3; transition: 0.3s; }
+    #output { margin-top: 20px; padding: 15px; background: #fff; border-radius: 8px; display: inline-block; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Bank Denomination Calculator</h1>
+
+  <input type="number" id="amount" placeholder="Enter Amount">
+  <br>
+  <button onclick="calculateDenomination()">Calculate</button>
+
+  <div id="output"></div>
+
+  <script>
+    function calculateDenomination() {
+      let amount = parseInt(document.getElementById("amount").value);
+      let denominations = [100, 50, 20, 10, 5, 2, 1];
+      let result = "";
+
+      for(let i = 0; i < denominations.length; i++) {
+        let count = Math.floor(amount / denominations[i]);
+        if(count > 0) {
+          result += ${count} - ${denominations[i]}'s<br>;
+          amount = amount % denominations[i];
+        }
+      }
+
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

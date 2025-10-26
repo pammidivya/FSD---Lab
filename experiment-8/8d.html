@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loops with Object and Array</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f4f7fa; margin: 20px; }
+    button { padding: 8px 15px; margin: 10px; border: none; border-radius: 6px; cursor: pointer; background: #28a745; color: white; }
+    button:hover { background: #1e7e34; transition: 0.3s; }
+    #output { margin-top: 20px; padding: 15px; background: #fff; border-radius: 8px; display: inline-block; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Print Object Data Using Loops</h1>
+
+  <button onclick="loopForIn()">For-In Loop (Object)</button>
+  <button onclick="loopForEach()">forEach Loop (Array)</button>
+  <button onclick="loopForOf()">For-Of Loop (Array)</button>
+
+  <div id="output"></div>
+
+  <script>
+    // Object example
+    const student = {
+      name: "John",
+      age: 20,
+      department: "IT",
+      skills: ["JavaScript", "React", "Node"]
+    };
+
+    // Array example
+    const fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+    // 1. For-In loop for object
+    function loopForIn() {
+      let result = "<b>For-In Loop (Object Properties):</b><br>";
+      for(let key in student) {
+        if(student.hasOwnProperty(key)) {
+          result += ${key} : ${student[key]}<br>;
+        }
+      }
+      document.getElementById("output").innerHTML = result;
+    }
+
+    // 2. forEach loop for array
+    function loopForEach() {
+      let result = "<b>forEach Loop (Array Elements):</b><br>";
+      fruits.forEach(function(fruit, index) {
+        result += ${index + 1}. ${fruit}<br>;
+      });
+      document.getElementById("output").innerHTML = result;
+    }
+
+    // 3. For-Of loop for array
+    function loopForOf() {
+      let result = "<b>For-Of Loop (Array Elements):</b><br>";
+      let count = 1;
+      for(let fruit of fruits) {
+        result += ${count}. ${fruit}<br>;
+        count++;
+      }
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</body>
+</html>
