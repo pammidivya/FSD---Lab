@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Tables, Forms and Frames</title>
+    <style>
+        table { border-collapse: collapse; margin: 15px 0; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px 12px; text-align: center; }
+        .gallery-frame { display: flex; gap: 10px; }
+        iframe { border: 2px solid #333; }
+    </style>
+</head>
+<body>
+    <h1>HTML Tables, Forms and Frames</h1>
+
+    <!-- a. Tables -->
+    <h2>a) Example Table</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Contact</th>
+        </tr>
+        <tr>
+            <td rowspan="2">John</td>
+            <td>Email</td>
+            <td>john@example.com</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>9876543210</td>
+        </tr>
+    </table>
+
+    <!-- b. Timetable -->
+    <h2>b) Timetable Example</h2>
+    <table cellspacing="5" cellpadding="10">
+        <caption><b>Weekly Timetable</b></caption>
+        <tr>
+            <th>Day</th>
+            <th>9-10 AM</th>
+            <th>10-11 AM</th>
+            <th>11-12 PM</th>
+            <th>12-1 PM</th>
+            <th>1-2 PM</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Maths</td>
+            <td>English</td>
+            <td>Science</td>
+            <td rowspan="5">Lunch</td>
+            <td>Computer</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td colspan="2">Lab</td>
+            <td>History</td>
+            <td>Sports</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Maths</td>
+            <td>Science</td>
+            <td>English</td>
+            <td>Art</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>History</td>
+            <td>English</td>
+            <td colspan="2">Computer Lab</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>Maths</td>
+            <td>Science</td>
+            <td>Computer</td>
+            <td>Games</td>
+        </tr>
+    </table>
+
+    <!-- c. Registration Form -->
+    <h2>c) Registration Form</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="fullname"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td><input type="number" name="phone"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" name="dob"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies:</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="reading"> Reading
+                    <input type="checkbox" name="hobby" value="sports"> Sports
+                    <input type="checkbox" name="hobby" value="music"> Music
+                </td>
+            </tr>
+            <tr>
+                <td>Department:</td>
+                <td>
+                    <select name="department">
+                        <option value="cse">CSE</option>
+                        <option value="ece">ECE</option>
+                        <option value="eee">EEE</option>
+                        <option value="mech">MECH</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" rows="4" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- d. Frames Example using iframes -->
+    <h2>d) Frames Example (Using iframes)</h2>
+    <div class="gallery-frame">
+        <iframe srcdoc="<img src='image1.jpg' alt='Sample Image' width='200' height='150'>" 
+                width="250" height="200"></iframe>
+
+        <iframe srcdoc='<p>This is a sample paragraph inside the second frame.<br>
+        Frames allow splitting the browser window into multiple sections.</p>' 
+                width="300" height="200"></iframe>
+
+        <iframe srcdoc='<a href="https://www.google.com" target="_blank">Open Google</a><br>
+        <a href="https://www.wikipedia.org" target="_blank">Open Wikipedia</a>' 
+                width="250" height="200"></iframe>
+    </div>
+</body>
+</html>
