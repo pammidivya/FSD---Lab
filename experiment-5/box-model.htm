@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Box Model Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;              /* Space inside the box around content */
+            border: 5px solid blue;      /* Border around padding */
+            margin: 30px auto;           /* Space outside the border, centered horizontally */
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;          /* vertically center the content */
+            font-weight: bold;
+        }
+
+        /* Optional: visual guides for content, padding, border, margin */
+        .box::before {
+            content: "Content";
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Box Model Example</h1>
+
+    <div class="box">
+        Content
+    </div>
+
+    <p style="text-align:center; max-width:400px; margin:auto;">
+        This box visually demonstrates the CSS Box Model: <br>
+        <b>Content</b> → the text inside the box <br>
+        <b>Padding</b> → the space between content and border <br>
+        <b>Border</b> → the edge surrounding padding <br>
+        <b>Margin</b> → the space outside the border
+    </p>
+</body>
+</html>
